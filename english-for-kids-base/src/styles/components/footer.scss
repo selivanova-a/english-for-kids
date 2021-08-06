@@ -1,0 +1,50 @@
+$github-icon-color: #F6F5FA;
+$rss-logo: "../public/img/rs_school_js.svg";
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 143px;
+  max-width: 1440px;
+  padding: 0 79px 0 79px;
+  margin: 0 auto
+}
+
+.rss {
+  display: block;
+  position: relative;
+  font-family: $font-family;
+  width: 24px;
+  height: 32px;
+  background-image:url($rss-logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 86px;
+  text-decoration:none;
+}
+.rss-year {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2.1rem;
+  letter-spacing: -2px;
+  color: $main-text-color;
+  line-height: 0.6;
+  font-weight: bolder;
+  transition: $transition;
+}
+.rss:hover .rss-year {
+  right: -5px;
+  letter-spacing: 0;
+}
+
+.github-icon {
+  font-size: 5rem;
+  color: $github-icon-color;
+
+  @include media-tablet {
+    color: $primary-color-two;
+  }
+}

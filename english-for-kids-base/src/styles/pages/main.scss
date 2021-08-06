@@ -1,0 +1,70 @@
+$lamp-border: 1px solid #F6F5FA;
+$lamp-box-shadow: inset 0px -1px 1px rgb(255 255 255 / 28%), inset 0px 1px 2px rgb(0 0 0 / 25%);
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 79px;
+  max-width: 1300px;
+  margin: 0 auto;
+
+  @include media-mobile-small {
+    padding: 30px 30px ;
+  }
+}
+
+.card {
+  background: $card-background;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  margin-bottom: 40px;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: $transition;
+    cursor: pointer;
+  }
+
+  &__image {
+    border-radius: $card-image-border-radius;
+    height: 203px;
+    width: 280px;
+    @include background;
+  }
+
+  &__name {
+    height: 50px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: $main-text-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.card__lamp {
+  margin: 15px;
+  width: 23px;
+  height: 23px;
+  border: $lamp-border;
+  border-radius: 50%;
+  background: $primary-color-two;
+  box-shadow: $lamp-box-shadow;
+}
+
+.play {
+  background: $primary-color-one;
+}

@@ -1,0 +1,81 @@
+$checkbox-box-shadow: inset 0px -1px 1px rgb(255 255 255 / 28%), inset 0px 1px 2px rgb(0 0 0 / 25%);
+$checkbox-border-radius: 44px;
+$checkbox-default-state: 'TRAIN';
+$checkbox-active-state: 'PLAY';
+$slider-transform: translate(-50%,-50%);
+$input-transform: translateX(66px);
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 34px;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: $primary-color-three;
+  text-transform: uppercase;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $primary-color-two;
+  box-shadow: $checkbox-box-shadow;
+  transition: $transition;
+  border-radius: $checkbox-border-radius;
+
+  @include media-mobile-small {
+    padding-left: 111px;
+  }
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $primary-color-three;
+  transition: $transition;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: $primary-color-one;
+}
+
+input:checked + .slider:before {
+  transform: $input-transform;
+}
+
+.slider:after
+{
+  content: $checkbox-default-state;
+  color: $primary-color-three;
+  display: block;
+  position: absolute;
+  transform: $slider-transform;
+  top: 50%;
+  left: 50%;
+  font-size: 1rem;
+  font-family: $font-family;
+}
+
+input:checked + .slider:after
+{
+  content: $checkbox-active-state;
+}
+
+

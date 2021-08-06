@@ -1,0 +1,97 @@
+$start-button-hover: #FF6024;
+$repeat-button-hover: #f5910f;
+$answer-item-size: 30px;
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
+.play-card {
+  border-radius: $card-border-radius;
+  height: 280px;
+  width: 280px;
+  @include background;
+  margin-bottom: 40px;
+}
+
+.button {
+  width: 165px;
+  height: 48px;
+  background: $button-hover-color;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: $primary-color-three;
+  border: none;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top:40px;
+
+  &:hover {
+    background: $start-button-hover;
+  }
+}
+
+.repeat {
+  background: $primary-color-two;
+
+  &:hover {
+    background: $repeat-button-hover;
+  }
+}
+
+
+.right-answer {
+  border: 5px solid green;
+  pointer-events: none;
+}
+
+.answers {
+  display:flex;
+  margin-left:79px;
+
+  &__item {
+    width:$answer-item-size;
+    height:$answer-item-size;
+    margin:10px;
+    border-radius: 50%;
+
+    @include media-mobile-small {
+      margin-left:10px;
+    }
+  }
+}
+
+.correct {
+  background:green;
+}
+
+.error {
+  background:red;
+}
+
+.hidden {
+  display:none;
+}
+
+.epic-win {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  @include background;
+}
+
+.show-errors {
+  font-family:$font-family;
+  font-weight:bolder;
+  font-size:3rem;
+  color: $primary-color-one;
+  background:white;
+  margin: 0 auto;
+}

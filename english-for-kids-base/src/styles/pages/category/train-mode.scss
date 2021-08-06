@@ -1,0 +1,99 @@
+$card-flip-animation: rotateY(180deg);
+$card-transform-style: preserve-3d;
+
+.cards-field {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  margin: 1%;
+  flex: 1 0 22%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  perspective: 400px;
+
+  &.flipped > .card-train {
+    transform: $card-flip-animation;
+  }
+}
+
+
+.card-train {
+  height: 280px;
+  width: 280px;
+  cursor: pointer;
+  transform-style: $card-transform-style;
+  transition: transform $transition;
+  position: relative;
+
+  &__front,
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: $card-border-radius;
+  }
+
+  &__front {
+    width: 100%;
+    height: 100%;
+    background: $card-background;
+    border-radius: $card-border-radius;
+    box-shadow: $card-box-shadow;
+    text-decoration: none;
+  }
+
+  &__back {
+    @include background;
+    transform: $card-flip-animation;
+  }
+
+  &__image {
+    border-radius: $card-image-border-radius;
+    height: 220px;
+    width: 280px;
+    @include background;
+  }
+
+  &__text {
+    height: 50px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: $main-text-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+
+  &__title {
+    background: $card-background;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+}
+
+.flip-button {
+  font-size: 3rem;
+  color: $primary-color-two;
+
+  &:hover {
+    color: $button-hover-color;
+  }
+}
+
+

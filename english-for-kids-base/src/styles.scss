@@ -1,0 +1,11 @@
+@import "../src/styles/abstract/constants";
+@import "../src/styles/abstract/wrappers";
+@import "../src/styles/abstract/mixins";
+
+@import "../src/styles/components/checkbox";
+@import "../src/styles/components/header";
+@import "../src/styles/components/popup";
+@import "../src/styles/components/footer";
+@import "../src/styles/pages/main";
+@import "styles/pages/category/train-mode";
+@import "styles/pages/category/play-mode";
